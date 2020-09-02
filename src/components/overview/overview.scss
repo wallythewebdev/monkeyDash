@@ -1,0 +1,102 @@
+// Styles for the over view - 
+// going to base this design off of a flex - grid 
+
+.overview-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+
+    .welcome {
+        width: 55%;
+        background: white;
+        margin-top: 50px;
+        padding: 25px;
+
+        h3{
+
+        }
+
+        p{
+
+        }
+    }
+
+    .totals {
+        display: flex;
+        flex-direction: row;
+
+        // Style totals boxes component
+
+        .totals_comp {
+            width: 25%;
+            margin: 50px 50px 50px 0;
+            background: white;
+            padding: 15px;
+        }
+    }
+
+    .overview {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 100px;
+
+        h3{
+          color: #2e384d;
+          font-size: 28pt;
+          font-weight: 300;
+        }
+
+        span.grey_info {
+            color: #8798ad;
+            font-size: 15pt;
+            font-weight: 400;
+        }
+        .companies_container{
+
+            .companies_title {
+                margin-bottom: 50px;
+            }
+
+           .companies_details {
+
+            .details {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 75%;
+                background: white;
+                align-items: center;
+                padding: 0 25px;
+                height: 75px;
+                margin: 15px 0;
+
+                .company_name {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    
+
+                    .avatar {
+                        display: block;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 50%;
+                        background-color: #2e384d;
+                    }
+                    .name {
+                        padding-left: 15px;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                    
+                
+            }
+        } 
+        }
+        
+    }
+}

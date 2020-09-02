@@ -1,0 +1,30 @@
+
+
+.analytics {
+    padding: 0 50px;
+
+    margin-top: 50px;
+
+    .companySelect{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .Title {
+            margin: 25px 0;
+            width: 35%;
+        }
+        select {
+            margin: 25px 10px;
+            height: 48pt;
+            border: none;
+            width: 65%;
+            font-size: 15pt;
+            padding: 15px;
+            font-weight: 400;
+            color: #2e384d;
+        }
+    }
+}
