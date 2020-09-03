@@ -5,23 +5,28 @@ import companyData from '../../assets/data/data.json'
 import {Line} from 'react-chartjs-2'
 
     const LineGraph = (props) => {
+            let NumValue = props.data // passing selected array number via props i.e. 8
             // Get the values for the graphy: 
 
-            let labelValues = (props) => {
-                // This is dummy data - Currently trying to pass in props to get the correct data
-                console.log(companyData)
-                return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            const notInclude = ['COMPANY', 'HEADQUARTERS', 'TOTAL'];
+            let labelValues = () => {
+                // Filter the JSON data to remove not wanted 
+                // This is explicit so will need to be written to be dynamic
+                // Data also is apearing out of context
+                return Object.keys(companyData[NumValue]).filter((val) => !notInclude.includes(val));
             }
+            const data = labelValues()
+            let labelData = data.map((val) => companyData[NumValue][val]);
 
             let [chartData, setChartData] = useState({})
             const chart = () =>{
                 setChartData({
                     // dummie data - but needs to be pulled from data... 
-                    labels: labelValues(),
+                    labels: data,
                     datasets: [
                         {
                             label: 'Companies Values',
-                            data: [100,230,340,232,100,230,340,232,100,230,340,232],
+                            data: labelData,
                             backgroundColor: [
                                 'rgba(75,192,192,0.6)'
                             ],
@@ -34,7 +39,7 @@ import {Line} from 'react-chartjs-2'
                 chart()
             }, [])
             return(
-                <div style={{height: 'auto', width: '80%'}}>
+                <div style={{height: 'auto', width: '100%'}}>
                     <Line data={chartData} options={{
                         Response: true
                     }} />
